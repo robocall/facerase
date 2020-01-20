@@ -39,9 +39,9 @@ function faceTracker() {
   // do something with the positions ...
   //requestAnimationFrame(drawLoop);
   cc.clearRect(0, 0, canvasInput.width, canvasInput.height);
-  var tankImg = new Image();
+  //var tankImg = new Image();
   //tankImg.src = "https://www.pancomanagement.com/pentagon-city/wp-content/uploads/sites/2/2019/11/solid-color-desktop-backgrounds-chrislattaorg-white-background-png-4096_2160.png";
-  tankImg.src = "https://previews.123rf.com/images/enterphoto/enterphoto1701/enterphoto170100033/71224944-colorful-rainbow-flower-chrysanthemum-flower-background.jpg"
+  //tankImg.src = "https://previews.123rf.com/images/enterphoto/enterphoto1701/enterphoto170100033/71224944-colorful-rainbow-flower-chrysanthemum-flower-background.jpg"
   
   cc.save();
 
@@ -100,7 +100,6 @@ var reflect = function(p, p0, p1) {
 }
 
 
-
 function init() {
   videoInput = document.getElementById('videoElement');
 
@@ -111,26 +110,29 @@ function init() {
   canvasInput = document.getElementById('drawCanvas');
 
   cc = canvasInput.getContext('2d');
+  startbutton = document.getElementById('startbutton');
+  startbutton.addEventListener('click', function(ev){
+    takepicture();
+    ev.preventDefault();
+  }, false);
+
+  backgroundPhoto = new Image();
+  backgroundPhoto.src = "https://previews.123rf.com/images/enterphoto/enterphoto1701/enterphoto170100033/71224944-colorful-rainbow-flower-chrysanthemum-flower-background.jpg"
+
+  width=800
+  height=450
   // cc.save();
 }
 
-
-/*
-function faceTracker() {
-  // var videoInput = document.getElementById('videoElement');
-  // var ctracker = new clm.tracker();
-  // ctracker.init();
-  // ctracker.start(videoInput);
-  positionLoop();
-
-  // var canvasInput = document.getElementById('drawCanvas');
+function takepicture() {
+  if (width && height) {
+    cc.drawImage(video, 0, 0, width, height);
   
-
- // drawLoop();
-
-  // console.log('end...')
-  // console.log(ctracker)
-
-}*/
+    var data = canvas.toDataURL('image/png');
+    backgroundPhoto.setAttribute('src', data);
+  } else {
+    clearphoto();
+  }
+}
 
 
