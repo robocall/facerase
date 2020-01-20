@@ -122,8 +122,8 @@ function init() {
   //backgroundPhoto.src = "https://previews.123rf.com/images/enterphoto/enterphoto1701/enterphoto170100033/71224944-colorful-rainbow-flower-chrysanthemum-flower-background.jpg"
   backgroundPhoto.src = "static/white.png"
 
-  width=800;
-  height=450;
+  width=1200;
+  height=675;
   // cc.save();
 }
 
