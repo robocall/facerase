@@ -7,7 +7,7 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/fml')
+@app.route('/erase')
 def index():
     title = 'Create the input'
     return render_template('index.html',
