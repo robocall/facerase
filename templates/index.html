@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>oogy</title>
+<title>Face Erase</title>
 <script type="application/x-javascript" src="static/js/clmtracker.js"></script>
 <script type="application/x-javascript" src="static/js/main.js"></script>
 
@@ -13,8 +13,6 @@
   position: relative;
 }
 #video {
-  width: 500px;
-  height: 375px;
   background-color: #666;
 }
 #drawCanvas {
@@ -26,20 +24,19 @@
 
 <body>
 
-<h> testing </h>
-
 <link rel="shortcut icon" href="#" />
 
 
-<div id="container">
 
+<!-- Main video -->
+<div id="container">
 <video autoplay="true" playsinline="" id="videoElement" width="800" height="450">
 </video>
 <canvas id="drawCanvas" width="800" height="450"></canvas>
-
-
-<!--  -->
 </div>
-</body>
 
+
+<button type="button" id="startbutton">Take photo</button>
+
+</body>
 </html>

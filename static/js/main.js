@@ -46,7 +46,7 @@ function faceTracker() {
   cc.save();
 
   cc.beginPath();
-  cc.strokeStyle = "green";
+  cc.strokeStyle = 'rgba(255, 255, 255, 0.01)'; // transparent
   //pointslist = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 22, 21, 19, 0]
   pointslist = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 
@@ -70,7 +70,8 @@ function faceTracker() {
   //cc.fill();
   cc.stroke();
   cc.clip(); 
-  cc.drawImage(tankImg, 0, 0, 1000, 1000);
+  //cc.drawImage(tankImg, 0, 0, 1000, 1000);
+  cc.drawImage(backgroundPhoto, 0, 0, width, height);
   //cc.closePath(); // Close the current path.
   cc.restore();
   
@@ -117,6 +118,7 @@ function init() {
   }, false);
 
   backgroundPhoto = new Image();
+  backgroundPhoto.crossOrigin = 'anonymous';
   backgroundPhoto.src = "https://previews.123rf.com/images/enterphoto/enterphoto1701/enterphoto170100033/71224944-colorful-rainbow-flower-chrysanthemum-flower-background.jpg"
 
   width=800
@@ -126,9 +128,9 @@ function init() {
 
 function takepicture() {
   if (width && height) {
-    cc.drawImage(video, 0, 0, width, height);
+    cc.drawImage(videoInput, 0, 0, width, height);
   
-    var data = canvas.toDataURL('image/png');
+    var data = canvasInput.toDataURL('image/png');
     backgroundPhoto.setAttribute('src', data);
   } else {
     clearphoto();
